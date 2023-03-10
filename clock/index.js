@@ -1,7 +1,5 @@
 'use strict';
 
-setInterval(updateTime, 1000);
-
 const secondHandEl = document.querySelector(".second-hand");
 const minuteHandel = document.querySelector(".min-hand");
 const hourHandEl = document.querySelector(".hour-hand");
@@ -41,3 +39,6 @@ function updateTime() {
     hourHandEl.style.transform =  `rotate(${hourDegrees}deg)`;
 
 }
+
+setInterval(updateTime, 1000);
+updateTime();
