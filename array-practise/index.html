@@ -94,19 +94,11 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    const sortedPeopleByLastName = people
-    .map((x) => {
-      const names = x.split(', ');
-      return { first: names[0], last: names[1] }
-    })
-    .sort((x, y) => { 
-      if (x.last.toLowerCase().charAt(0) > y.last.toLowerCase().charAt(0)) {
-        return 1;
-      }
-      return -1;
-    })
-    .map((x) => {
-      return `${x.first} , ${x.last}`
+    const sortedPeopleByLastName = people .sort((x, y) => { 
+      const [, xLast] = x.split(', ');
+      const [, yLast] = y.split(', ');
+
+      return xLast > yLast ? 1 : -1;
     })
     console.table(sortedPeopleByLastName); 
 
